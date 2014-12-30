@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script type="text/javascript">
+function decimalRound(obj)
+{
+	obj=obj+'';
+  if(obj.indexOf('.')>0){
+  	if(obj.length-(obj.indexOf('.')+1)>2){
+  		tmp=obj.substring(obj.indexOf('.')+3,obj.indexOf('.')+4);
+  		obj=obj.substring(0,obj.indexOf('.')+3);
+  		obj=parseFloat(obj)+(parseInt(tmp)>4?parseFloat(0.011):0);
+  		obj=obj+'';
+  		obj=obj.substring(0,obj.indexOf('.')+3);
+  	}
+  }
+  return obj;
+}
+</script>
+</head>
+<body>
+
+
+<form>
+	<input type="text" id="myNums" name="myNums"><br>
+<input type="button" value="Show!" onclick="alert(decimalRound(document.getElementById('myNums').value))" >
+</form>
+
+</body>
+</html>

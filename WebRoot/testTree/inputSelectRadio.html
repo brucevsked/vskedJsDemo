@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <!-- must set here! -->
+  <base href="">
+    
+  <title>ztree下拉树单选页</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="">
+	<meta http-equiv="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+  <link rel="stylesheet" type="text/css" href="../css/zTreeStyle/zTreeStyle.css">
+  <link rel="stylesheet" type="text/css" href="../css/zTreeStyle/demo.css">
+  <script type="text/javascript" charset="UTF-8" src="../js/lib/jquery-1.4.4.min.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="../js/lib/jquery.ztree.all-3.5.min.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="../js/inputSelectRadio.js" ></script>
+  </head>
+  
+<body>
+<h1>带 radio 的单选下拉菜单  -- zTree</h1>
+<h6>[ 文件路径: super/select_menu_radio.html ]</h6>
+<div class="content_wrap">
+	<div class="zTreeDemoBackground left">
+		<ul class="list">
+			<li class="title">&nbsp;&nbsp;<span class="highlight_red">勾选 radio 或者 点击节点 进行选择</span></li>
+			<li class="title">&nbsp;&nbsp;Test: <input id="citySel" type="text" readonly value="" style="width:120px;" onclick="showMenu();" />
+		&nbsp;<a id="menuBtn" href="#" onclick="showMenu(); return false;">select</a></li>
+		</ul>
+	</div>
+	<div class="right">
+		<ul class="info">
+			<li class="title"><h2>实现方法说明</h2>
+				<ul class="list">
+				<li>用 radio 也可以轻松实现单选的下拉菜单</li>
+				<li>单选其实没有必要使用 radio, 此 Demo 主要用于 和 其他下拉菜单进行对比</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div id="menuContent" class="menuContent" style="display:none; position: absolute;">
+	<ul id="treeDemo" class="ztree" style="margin-top:0; width:180px; height: 300px;"></ul>
+</div>
+</body>
+</html>

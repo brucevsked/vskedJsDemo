@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <!-- must set here! -->
+  <base href="">
+    
+  <title>json数据生成表格</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="">
+	<meta http-equiv="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+  <link rel="stylesheet" type="text/css" href="css/allStyle.css">
+  <script type="text/javascript" charset="UTF-8" src="js/vskedRegx.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="js/vskedUtil.js" ></script>
+  </head>
+  
+<body>
+<div id="tbA01"></div>
+ <script type="text/javascript" >
+ 	//column properties 1text 2colSpan 3align 4rowSpan 5class 6valign 7name 8id 9needCount
+ 	var tsTbData={"tbHead":[[{"text":"用电服务","colSpan":8,"align":"center"}],
+ 		[{"text":"单位","rowSpan":2,"align":"center"},{"text":"停电重要用户名称","rowSpan":2,"align":"center"},{"text":"停电简明情况","rowSpan":2,"align":"center"},{"text":"累计停电","colSpan":2,"align":"center"},{"text":"停电重要用户","colSpan":3,"align":"center"}],
+ 		[{"text":"用户","align":"center"},{"text":"占用比例","align":"center"},{"text":"一级","align":"center"},{"text":"二级","align":"center"},{"text":"一、二级占重要用户比例","align":"center"}]],
+ 		"tbBody":[["1","2","3","4","5","6","7","8"],["1a","2b","3c","4d","5e","6f","7g","8h"],
+ 		["11","----------","3","4","5","6","7","8"],["1a","2ba","3c1","4d","5e","6f","7g","8h"],
+ 		["12","2b","3","4","5","6","7","8"],["1a","2bb","3c2","4d","5e","6f","7g","8h"],
+ 		["13","2c","3","4","5","6","7","8"],["1a","2bc","3c3","4d","5e","6f","7g","8h"],
+ 		["14","2d","3","4","5","6","7","8"],["1a","2bd","3c4","4d","5e","6f","7g","8h"]
+ 		],"tbFoot":[],"tbPage":[]};
+ 		
+function createJsonTable(obj,dt){
+	var tb=document.createElement('table');
+	tbData=dt;
+	for(i=0;i<tbData.tbHead.length;i++){
+		var tbRow=document.createElement('tr');
+		for(c=0;c<(tbData.tbHead[i].length);c++){
+			var tbColumn=document.createElement('td');
+			if(tbData.tbHead[i][c].text !=undefined) tbColumn.innerHTML=tbData.tbHead[i][c].text;
+			if(tbData.tbHead[i][c].colSpan !=undefined) tbColumn.colSpan=tbData.tbHead[i][c].colSpan;
+			if(tbData.tbHead[i][c].rowSpan !=undefined) tbColumn.rowSpan=tbData.tbHead[i][c].rowSpan;
+			if(tbData.tbHead[i][c].align !=undefined) tbColumn.align=tbData.tbHead[i][c].align;
+			if(tbData.tbHead[i][c].id !=undefined) tbColumn.id=tbData.tbHead[i][c].id;
+			if(tbData.tbHead[i][c].name !=undefined) tbColumn.name=tbData.tbHead[i][c].name;
+			tbRow.appendChild(tbColumn);
+			tb.appendChild(tbRow);
+	  }
+	}
+	
+	for(i=0;i<tbData.tbBody.length;i++){
+		var tbRow=document.createElement('tr');
+		for(c=0;c<(tbData.tbBody[i].length);c++){
+			var tbColumn=document.createElement('td');
+			tbColumn.innerHTML=tbData.tbBody[i][c];
+			tbRow.appendChild(tbColumn);
+			tb.appendChild(tbRow);
+		}
+	}
+	document.getElementById(obj).appendChild(tb);
+}
+createJsonTable('tbA01',tsTbData);
+ 		
+ 		
+ </script>
+
+</body>
+</html>

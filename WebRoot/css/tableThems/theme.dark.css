@@ -1,0 +1,187 @@
+/*************
+  Dark Theme (by thezoggy)
+ *************/
+/* overall */
+table {
+	width: 100%;
+	font: 11px/18px Arial, Sans-serif;
+	color: #ccc;
+	text-align: left;
+	background-color: #000;
+	border-spacing: 0;
+}
+
+/* header */
+table th,
+table thead td {
+	padding: 4px;
+	font: bold 12px/20px Arial, Sans-serif;
+	color: #fff;
+	background-color: #000;
+	border-collapse: collapse;
+}
+table thead th {
+	border-bottom: #333 2px solid;
+}
+table .header,
+table .tablesorter-header {
+	padding: 4px 20px 4px 4px;
+	cursor: pointer;
+	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAAP///////yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+table thead .headerSortUp,
+table thead .tablesorter-headerSortUp,
+table thead .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+	border-bottom: #888 1px solid;
+}
+table thead .headerSortDown,
+table thead .tablesorter-headerSortDown,
+table thead .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+	border-bottom: #888 1px solid;
+}
+table thead .sorter-false {
+	background-image: none;
+	cursor: default;
+	padding: 4px;
+}
+
+/* tfoot */
+table tfoot .tablesorter-headerSortUp,
+table tfoot .tablesorter-headerSortDown,
+table tfoot .tablesorter-headerAsc,
+table tfoot .tablesorter-headerDesc {
+	border-top: #888 1px solid;
+	/* remove sort arrows from footer */
+	background-image: none;
+}
+
+/* tbody */
+table td {
+	padding: 4px;
+	background-color: #000;
+	border-bottom: #333 1px solid;
+	color: #ccc;
+}
+
+/* hovered row colors */
+table tbody > tr:hover > td,
+table tbody > tr.even:hover > td,
+table tbody > tr.odd:hover > td {
+	background: #000;
+}
+
+/* table processing indicator */
+table .tablesorter-processing {
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	/* background-image: url(../addons/pager/icons/loading.gif) !important; */
+	background-image: url('data:image/gif;base64,R0lGODlhFAAUAKEAAO7u7lpaWgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQBCgACACwAAAAAFAAUAAACQZRvoIDtu1wLQUAlqKTVxqwhXIiBnDg6Y4eyx4lKW5XK7wrLeK3vbq8J2W4T4e1nMhpWrZCTt3xKZ8kgsggdJmUFACH5BAEKAAIALAcAAAALAAcAAAIUVB6ii7jajgCAuUmtovxtXnmdUAAAIfkEAQoAAgAsDQACAAcACwAAAhRUIpmHy/3gUVQAQO9NetuugCFWAAAh+QQBCgACACwNAAcABwALAAACE5QVcZjKbVo6ck2AF95m5/6BSwEAIfkEAQoAAgAsBwANAAsABwAAAhOUH3kr6QaAcSrGWe1VQl+mMUIBACH5BAEKAAIALAIADQALAAcAAAIUlICmh7ncTAgqijkruDiv7n2YUAAAIfkEAQoAAgAsAAAHAAcACwAAAhQUIGmHyedehIoqFXLKfPOAaZdWAAAh+QQFCgACACwAAAIABwALAAACFJQFcJiXb15zLYRl7cla8OtlGGgUADs=') !important;
+}
+
+/* Zebra Widget - row alternating colors */
+table tr.odd td {
+	background-color: #202020;
+}
+table tr.even td {
+	background-color: #101010;
+}
+
+/* Column Widget - column sort colors */
+table td.primary,
+table tr.odd td.primary {
+	background-color: #0a0a0a;
+}
+table tr.even td.primary {
+	background-color: #050505;
+}
+table td.secondary,
+table tr.odd td.secondary {
+	background-color: #0f0f0f;
+}
+table tr.even td.secondary {
+	background-color: #0a0a0a;
+}
+table td.tertiary,
+table tr.odd td.tertiary {
+	background-color: #191919;
+}
+table tr.even td.tertiary {
+	background-color: #0f0f0f;
+}
+
+/* caption */
+caption {
+	background: #202020;
+}
+
+/* filter widget */
+table .tablesorter-filter-row td {
+	background: #202020;
+	line-height: normal;
+	text-align: center; /* center the input */
+	-webkit-transition: line-height 0.1s ease;
+	-moz-transition: line-height 0.1s ease;
+	-o-transition: line-height 0.1s ease;
+	transition: line-height 0.1s ease;
+}
+/* optional disabled input styling */
+table .tablesorter-filter-row .disabled {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: not-allowed;
+}
+
+/* hidden filter row */
+table .tablesorter-filter-row.hideme td {
+	/*** *********************************************** ***/
+	/*** change this padding to modify the thickness     ***/
+	/*** of the closed filter row (height = padding x 2) ***/
+	padding: 2px;
+	/*** *********************************************** ***/
+	margin: 0;
+	line-height: 0;
+	cursor: pointer;
+}
+table .tablesorter-filter-row.hideme .tablesorter-filter {
+	height: 1px;
+	min-height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	/* don't use visibility: hidden because it disables tabbing */
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+/* filters */
+table .tablesorter-filter {
+	width: 98%;
+	height: auto;
+	margin: 4px;
+	padding: 4px;
+	background-color: #111;
+	border: 1px solid #222;
+	color: #ddd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: height 0.1s ease;
+	-moz-transition: height 0.1s ease;
+	-o-transition: height 0.1s ease;
+	transition: height 0.1s ease;
+}
+/* rows hidden by filtering (needed for child rows) */
+.tablesorter .filtered {
+	display: none;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6bf99;
+}

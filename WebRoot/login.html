@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <!-- must set here! -->
+  <base href="">
+    
+  <title>用户登录页面</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="">
+	<meta http-equiv="description" content="">
+	<Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  
+  <script type="text/javascript" charset="UTF-8" src="js/vskedRegx.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="js/vskedUtil.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="js/login.js" ></script>
+  </head>
+  
+<body>
+<form id="fm" name="fm" >
+<table width="100%" border="0" height="100%">
+  <tr>
+    <td width="18%">&nbsp;</td>
+    <td width="65%">&nbsp;</td>
+    <td width="17%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align="center"><table width="385" height="62" border="0">
+    	<tr><td colspan="2" align="center">用户登录</td><td>&nbsp;</td></tr>
+    	<tr><td colspan="3" align="left" id="errMsg" ></td></tr>
+      <tr>
+        <td width="57" align="center">用户名:</td>
+        <td width="181" align="center">
+          <input type="text" id="userName" name="userName" >
+        </td>
+        <td width="133" align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">密码:</td>
+        <td align="center">
+          <input type="password" id="userPass" name="userPass" >
+        </td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr><td colspan="3" align="center">&nbsp;</td></tr>
+      <tr>
+        <td align="center">&nbsp;</td>
+        <td align="center">
+        	<button type="button" onclick='toLogin();' id='btLogin'>登录</button>
+     			<button type="button" onclick='toClean();' id='btReset'>重置</button>
+     			<button type="button" onclick='toReg();' id='btReg'>注册</button>
+        </td>
+        <td align="center">&nbsp;</td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table></form>
+
+<script type="text/javascript">getFocus(g('userName'));</script>
+</body>
+</html>

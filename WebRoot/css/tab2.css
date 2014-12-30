@@ -1,0 +1,38 @@
+* {margin:0;padding:0}
+ul {list-style:none}
+#tabList1 {
+	margin:50px;
+	position:relative;
+	border:1px solid #ccc;
+	width:600px;
+	height:310px
+	}
+div {
+	border-bottom:1px solid #ccc;
+	float:left;
+	text-align:center;
+	width:200px;
+	height:30px
+	}
+div a {
+	width:200px;
+	height:30px;
+	line-height:30px;
+	display:block;
+	text-decoration:none;
+	background:#f9f9f9
+	}
+a:hover {
+	background:#ccc
+	}
+.t1 {
+	width:600px;height:300px;
+	visibility:hidden;
+	position:absolute;top:30px;left:0px
+	}
+#d1:hover #t1,.a1:hover #t1,#d2:hover #t2,.a2:hover #t2,#d3:hover #t3,.a3:hover #t3 {
+	visibility:visible
+	}
+.t1 a {
+	background:#fff
+	}

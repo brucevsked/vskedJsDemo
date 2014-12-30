@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <!-- must set here! -->
+  <base href="">
+    
+  <title>数据生成测试页面</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="">
+	<meta http-equiv="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+  <link rel="stylesheet" type="text/css" href="css/allStyle.css">
+  <script type="text/javascript" charset="UTF-8" src="js/vskedRegx.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="js/vskedUtil.js" ></script>
+  <script type="text/javascript" charset="UTF-8" src="js/vskedGen.js" ></script>
+  </head>
+  
+<body>
+	<button type="button" id="btTestNum0" name="btTestNum0" onclick="outPutV(getRandomNum());">随机数字0</button>
+	<button type="button" id="btTestNum1" name="btTestNum1" onclick="outPutV(getRandomNum(100));">随机数字1</button>
+	<button type="button" id="btTestNum2" name="btTestNum2" onclick="outPutV(getRandomNum(1000,9999));">随机数字2</button>
+	<button type="button" id="btTestChar" name="btTestChar" onclick="outPutV(getLowChar());">随机字母1</button>
+	<button type="button" id="btTestStr" name="btTestStr" onclick="outPutV(getStringLow(5));">随机字符串1</button>
+</body>
+</html>
