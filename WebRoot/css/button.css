@@ -1,4 +1,4 @@
-input[type=button]:disabled,input[type=submit]:disabled,button:disabled{color:#999;cursor:auto;}
+﻿input[type=button]:disabled,input[type=submit]:disabled,button:disabled{color:#999;cursor:auto;}
 input[type=button],input[type=submit],input[type=reset],button{
 	color:#369;
 	background:#ddeef7;
