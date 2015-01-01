@@ -1,4 +1,4 @@
-
+﻿
 // vskedNavEvnType 1 is onClick 2 is onMouseOver
 var vskedElCount=1;
 

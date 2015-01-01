@@ -1,4 +1,4 @@
-
+﻿
 var letterLow="abcdefghijklmnopqrstuvwxyz";
 var vskTbCount=0;
 var baseTableJson={"tbHead":['c1','c2','c3','c4','c5'],"tbBody":[['d1','d2','d3','d','daa'],['d1a','d2b','d3c','ft','sts'],['d11','d22','d33','fta','fff']]};

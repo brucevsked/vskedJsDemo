@@ -1,4 +1,4 @@
-var windowWidth_0=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+﻿var windowWidth_0=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 var windowHeight_0=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 

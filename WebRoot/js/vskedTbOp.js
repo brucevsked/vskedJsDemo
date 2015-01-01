@@ -1,8 +1,8 @@
 
 var vskTableInfo={'tbId':'tb0','colCount':20,'rowCount':20};
-var tsTbData={"tbHead":[[{"text":"ÓÃµç·şÎñ","colSpan":8,"align":"center"}],
- 		[{"text":"µ¥Î»","rowSpan":2,"align":"center"},{"text":"Í£µçÖØÒªÓÃ»§Ãû³Æ","rowSpan":2,"align":"center"},{"text":"Í£µç¼òÃ÷Çé¿ö","rowSpan":2,"align":"center"},{"text":"ÀÛ¼ÆÍ£µç","colSpan":2,"align":"center"},{"text":"Í£µçÖØÒªÓÃ»§","colSpan":3,"align":"center"}],
- 		[{"text":"ÓÃ»§","align":"center"},{"text":"Õ¼ÓÃ±ÈÀı","align":"center"},{"text":"Ò»¼¶","align":"center"},{"text":"¶ş¼¶","align":"center"},{"text":"Ò»¡¢¶ş¼¶Õ¼ÖØÒªÓÃ»§±ÈÀı","align":"center"}]],
+var tsTbData={"tbHead":[[{"text":"ç”¨ç”µæœåŠ¡","colSpan":8,"align":"center"}],
+ 		[{"text":"å•ä½","rowSpan":2,"align":"center"},{"text":"åœç”µé‡è¦ç”¨æˆ·åç§°","rowSpan":2,"align":"center"},{"text":"åœç”µç®€æ˜æƒ…å†µ","rowSpan":2,"align":"center"},{"text":"ç´¯è®¡åœç”µ","colSpan":2,"align":"center"},{"text":"åœç”µé‡è¦ç”¨æˆ·","colSpan":3,"align":"center"}],
+ 		[{"text":"ç”¨æˆ·","align":"center"},{"text":"å ç”¨æ¯”ä¾‹","align":"center"},{"text":"ä¸€çº§","align":"center"},{"text":"äºŒçº§","align":"center"},{"text":"ä¸€ã€äºŒçº§å é‡è¦ç”¨æˆ·æ¯”ä¾‹","align":"center"}]],
  		"tbBody":[["1","2","3","4","5","6","7","8"],["1a","2b","3c","4d","5e","6f","7g","8h"],
  		["11","----------","3","4","5","6","7","8"],["1a","2ba","3c1","4d","5e","6f","7g","8h"],
  		["12","2b","3","4","5","6","7","8"],["1a","2bb","3c2","4d","5e","6f","7g","8h"],
