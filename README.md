@@ -1,7 +1,7 @@
 vskedJsDemo
 ===========
-everything start index0.html
-所有一切从index0.html进入
+everything start UserTTest
+所有一切从UserTTest进入
 
 i want write some javascript so maybe u love javascript and new level let's learn and use js
 my email is vsked@163.com  
