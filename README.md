@@ -30,3 +30,7 @@ check method
 3 再次用ue打开查看文件->转换->ascii转utf-8是否可用 
 4 如果可以点的话关闭文件使用记事本打开
 5 在windows记事本中 文件->另存为 ->编码 选择为utf-8 并替换原文件
+
+
+添加测试数据生成器testDataGenerate.html请配合ultraeditor使用
+add the dategenerate for sql or other data ,please work with ultraeditor to make test data
