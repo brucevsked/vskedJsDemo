@@ -32,5 +32,5 @@ check method
 5 在windows记事本中 文件->另存为 ->编码 选择为utf-8 并替换原文件
 
 
-添加测试数据生成器testDataGenerate.html请配合ultraeditor使用
-add the dategenerate for sql or other data ,please work with ultraeditor to make test data
+添加测试数据生成器testDataGenerate.html请配合ultraeditor使用| testDataGenerate.html |用法可以参照 userMenual/1.png
+add the dategenerate for sql or other data ,please work with ultraeditor to make test data |testDataGenerate.html|how to use you can see userMenual/1.png
