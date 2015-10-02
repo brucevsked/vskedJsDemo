@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title></title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="">
+<meta http-equiv="description" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/screenStyle.css">
+<link rel="stylesheet" type="text/css" href="js/lib/dijit/themes/claro/claro.css">
+
+</head>
+
+<body class="claro">
+
+<div class="demoLayout" style="height: 99%; width: 99%" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+	<div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+		here is center
+	</div>
+	<div class="demoLayout" style="height: 6%" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="region: 'top', splitter: true, design: 'headline'">
+		<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'">bottomff</div>
+	</div>
+	<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: true, region: 'left'">left put the tree</div>
+
+	<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter: true, region: 'bottom'">
+		company inc
+	</div>
+</div>
+<script>
+    dojoConfig= {
+        has: {
+            "dojo-firebug": true
+        },
+        parseOnLoad: false,
+        foo: "bar",
+        async: true
+    };
+</script>
+<!-- load dojo -->
+<script src="js/lib/dojo/dojo.js"  ></script>
+<script>
+	require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!"], function(parser){
+		parser.parse();
+	});
+</script>
+</body>
+</html>

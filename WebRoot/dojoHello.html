@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title></title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="">
+<meta http-equiv="description" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/screenStyle.css">
+<link rel="stylesheet" type="text/css" href="js/lib/dijit/themes/claro/claro.css">
+
+</head>
+
+<body class="claro">
+	
+	<h1 id="greeting">Hello</h1>
+
+<!-- load dojo -->
+<script src="js/lib/dojo/dojo.js" data-dojo-config="async: true" ></script>
+
+<script>
+	require([
+    'dojo/dom',
+    'dojo/domReady!'
+], function (dom) {
+    var greeting = dom.byId('greeting');
+    greeting.innerHTML += ' from Dojo!';
+});
+</script>
+
+</body>
+</html>

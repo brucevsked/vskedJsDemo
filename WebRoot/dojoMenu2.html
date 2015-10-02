@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title></title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="">
+<meta http-equiv="description" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/screenStyle.css">
+<link rel="stylesheet" type="text/css" href="js/lib/dijit/themes/claro/claro.css">
+<!-- load dojo -->
+<script src="js/lib/dojo/dojo.js" data-dojo-config="async: true" ></script>
+
+</head>
+
+<body class="claro">
+	<h3>Menu Demo</h3>
+	<div id="mainMenu"></div>
+	<p>Last selected: <span id="lastSelected">none</span></p>
+<script>
+     // Require dependencies  
+        require([  
+            "dijit/Menu",  
+            "dijit/MenuItem",  
+            "dijit/registry",
+            "dojo/dom",
+            "dijit/PopupMenuItem",  
+            "dojo/domReady!"  
+        ], function(Menu, MenuItem,registry,dom, PopupMenuItem){  
+        var onItemSelect = function(evt){
+					// retrieve the widget representing the item clicked
+					var item = registry.getEnclosingWidget(evt.target);
+					dom.byId("lastSelected").innerHTML =
+						item.get("label");
+				};
+            // create the Menu container  
+            var mainMenu = new Menu({  
+            }, "mainMenu");  
+   
+            var moduleMenu = new Menu({  id: "moduleMenu"  }); 
+             
+            moduleMenu.addChild( new MenuItem({ id: "moduleAdd", label: '添加模块' ,onClick: onItemSelect  }) );        
+            moduleMenu.addChild( new MenuItem({ id: "moduleList",label: '模块列表'  ,onClick: onItemSelect           }) ); 
+            
+            var userMenu = new Menu({  id: "userMenu"  }); 
+             
+            userMenu.addChild( new MenuItem({ id: "userAdd", label: '添加用户' ,onClick: onItemSelect  }) );        
+            userMenu.addChild( new MenuItem({ id: "userList",label: '用户列表'  ,onClick: onItemSelect           }) ); 
+            
+            var sysMenu = new Menu({  id: "sysMenu"  });  
+            sysMenu.addChild( new PopupMenuItem({ id: "module",  label: "模块",  popup: moduleMenu            }) );  
+            sysMenu.addChild( new PopupMenuItem({ id: "user",  label: "用户",  popup: userMenu            }) );    
+           
+            
+            var productMenu = new Menu({  id: "productMenu"  });
+            productMenu.addChild( new MenuItem({ id: "productAdd", label: '添加产品' ,onClick: onItemSelect  }) );        
+            productMenu.addChild( new MenuItem({ id: "productList",label: '产品列表'  ,onClick: onItemSelect           }) );  
+             
+            mainMenu.addChild( new PopupMenuItem({ id: "product",  label: "产品",  popup: productMenu            }) ); 
+            mainMenu.addChild( new PopupMenuItem({ id: "sys",  label: "系统",  popup: sysMenu            }) );  
+            
+            mainMenu.startup();  
+            moduleMenu.startup(); 
+            userMenu.startup(); 
+            sysMenu.startup();  
+            productMenu.startup();   
+        });  
+
+</script>
+
+</body>
+</html>
