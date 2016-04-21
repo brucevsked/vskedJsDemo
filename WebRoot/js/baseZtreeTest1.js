@@ -1,37 +1,7 @@
 
 var leftZtreeSetting = { data: { simpleData: { enable: true	}		},callback:{ onClick:procPage}	};
 
-var leftZtreeNodes =[
-			{ id:1, pId:0, name:'父节点1t - 展开', open:true },
-			{ id:11, pId:1, name:'父节点11t - 折叠'},
-			{ id:111, pId:11, name:'叶子节点111'},
-			{ id:112, pId:11, name:'叶子节点112'},
-			{ id:113, pId:11, name:'叶子节点113'},
-			{ id:114, pId:11, name:'叶子节点114'},
-			{ id:12, pId:1, name:'父节点12 - 折叠'},
-			{ id:121, pId:12, name:'叶子节点121'},
-			{ id:122, pId:12, name:'叶子节点122'},
-			{ id:123, pId:12, name:'叶子节点123'},
-			{ id:124, pId:12, name:'叶子节点124'},
-			{ id:13, pId:1, name:'父节点13 - 没有子节点', isParent:true},
-			{ id:2, pId:0, name:'父节点2 - 折叠'},
-			{ id:21, pId:2, name:'父节点21 - 展开', open:true},
-			{ id:211, pId:21, name:'叶子节点211'},
-			{ id:212, pId:21, name:'叶子节点212'},
-			{ id:213, pId:21, name:'叶子节点213'},
-			{ id:214, pId:21, name:'叶子节点214'},
-			{ id:22, pId:2, name:'父节点22 - 折叠'},
-			{ id:221, pId:22, name:'叶子节点221'},
-			{ id:222, pId:22, name:'叶子节点222'},
-			{ id:223, pId:22, name:'叶子节点223'},
-			{ id:224, pId:22, name:'叶子节点224'},
-			{ id:23, pId:2, name:'父节点23 - 折叠'},
-			{ id:231, pId:23, name:'叶子节点231'},
-			{ id:232, pId:23, name:'叶子节点232'},
-			{ id:233, pId:23, name:'叶子节点233'},
-			{ id:234, pId:23, name:'叶子节点234'},
-			{ id:3, pId:0, name:'父节点3 - 没有子节点', isParent:true, open:true}
-		];
+var leftZtreeNodes =[{ id:1 , pId: 0 , name: ' 潜行平台A01' },{ id:10000 , pId: 1 , name: ' 进销存子系统' },{ id:10001 , pId: 10000 , name: ' 订单模块' },{ id:10002 , pId: 10000 , name: ' 采购模块' },{ id:10003 , pId: 10000 , name: ' 库存模块' },{ id:10004 , pId: 10000 , name: ' 出库模块' },{ id:10005 , pId: 10000 , name: ' 报表' },{ id:20000 , pId: 1 , name: ' 开卡网站' },{ id:20001 , pId: 20000 , name: ' 身份识别' },{ id:20002 , pId: 20000 , name: ' 联系方式' },{ id:20003 , pId: 20000 , name: ' 开卡数据管理' },{ id:30000 , pId: 1 , name: ' 商城' },{ id:40000 , pId: 1 , name: ' 风控数据' },{ id:50000 , pId: 1 , name: ' 客户管理' },{ id:50001 , pId: 50000 , name: ' 客户信息' },{ id:50002 , pId: 50000 , name: ' 客户维护记录' },{ id:60000 , pId: 1 , name: ' 无线数据' }];
 
 function procPage(e, treeId, treeNode){
 	console.log('|'+treeNode.id+'|'+treeNode.pId+'|'+treeNode.name);
