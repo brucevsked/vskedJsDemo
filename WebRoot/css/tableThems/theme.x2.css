@@ -1,0 +1,9 @@
+﻿table{width:500px;border:0;margin:100px auto 0;text-align:center;border-collapse:collapse;border-spacing:0;}
+table th{background:#0090D7;font-weight:normal;line-height:30px;font-size:14px;color:#FFF;}
+table tr:nth-child(odd){background:#FCC;}
+table tr:nth-child(even){background:#CFF;}
+table td:nth-child(even){color:#C00;}
+table tr:hover{background:#73B1E0;color:#FFF;}
+table td,table th{border:1px solid #EEE;}
+
+table tr:nth-child(6){background:#73B1E0;color:#FFF;}
