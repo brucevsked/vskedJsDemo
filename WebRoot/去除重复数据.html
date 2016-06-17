@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>去除重复数据</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="">
+<meta http-equiv="description" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+
+<body>
+<table>
+	<tr>
+		<td>原始数据</td>
+		<td>
+			<textarea rows="5" cols="140" id="mySource1" name="mySource1"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="center">
+			<button onclick="distinctA1()" >去除重复数据</button> &nbsp; &nbsp;
+			<button onclick="getDistinctA1()">抽取重复数据</button>
+		</td>
+	</tr>
+	<tr>
+		<td>处理结果</td>
+		<td>
+			<textarea rows="25" cols="140" id="myResult1" name="myResult1"></textarea>
+		</td>
+	</tr>
+</table>
+<script>
+	var lineFlag='\n';
+	var resultArray=[];
+	function distinctA1(){
+		resultArray=[];
+		var tmpData=document.getElementById('mySource1').value;
+		var tmpArray=tmpData.split(lineFlag);
+		for(i=0;i<tmpArray.length;i++){
+			var mydata=tmpArray[i];
+			if(resultArray.indexOf(mydata)==-1)resultArray.push(mydata);
+		}
+		var myResultData='';
+		for(var i=0;i<resultArray.length;i++){
+			myResultData+=resultArray[i]+lineFlag;
+		}
+		document.getElementById('myResult1').value=myResultData;
+	}
+	
+	function getDistinctA1(){
+	  var tmpData=document.getElementById('mySource1').value;
+		var tmpArray=tmpData.split(lineFlag);
+		//console.log(letsCount(tmpArray));
+		var myPreResultArray=letsCount(tmpArray);
+		var myResultData='';
+		for(myObj in myPreResultArray){
+			myResultData+=myObj+'	'+myPreResultArray[myObj]+lineFlag;
+		}
+		//console.log(myPreResultArray);
+		//var resultArray=showDuplicates(tmpArray);
+		document.getElementById('myResult1').value=myResultData;
+	}
+// 统计每个元素在数组中的出现次数
+function letsCount(arr) {
+    if (Object.prototype.toString.call(arr) != '[object Array]') { // 参数校验
+        return {};
+    }
+    var hash = {}; // HASH表
+    for ( var i = 0; i < arr.length; i++) { // 遍历一次数组
+        if (arr[i] in hash) { // HASH表里存在
+            hash[arr[i]]++; // 计数加一次
+            // 如果你不要统计重复次数的话 在这里就可以输出了!
+            // console.log(arr[i]);
+        } else { // HASH表里不存在
+            hash[arr[i]] = 1; // 计数一次
+        }
+    }
+    return hash;
+}
+
+	// 输出所有出现次数大于1的元素
+function showDuplicates(arr) {
+    var occ = letsCount(arr), // 建计数表
+    result = []; // 结果集
+    for ( var i in occ) { // 遍历一次计数表
+        if (occ[i] > 1) { // 找到重复元素
+            result.push(i); // 放到结果集
+        }
+    }
+    return result; // 输出结果集
+}
+</script>
+</body>
+</html>
