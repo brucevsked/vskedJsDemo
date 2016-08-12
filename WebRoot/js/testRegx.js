@@ -17,3 +17,7 @@ function testMobile(){
 function testScard(){
 	outPutV( isScard(trims(g('userName').value)) );
 }
+
+function testNumber(){
+	outPutV( isNumber(trims(g('userName').value)) );
+}

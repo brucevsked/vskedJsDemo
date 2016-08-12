@@ -11,3 +11,7 @@ function isMobile(str){
 function isScard(str){
 	return sCard.test(str);
 }
+
+function isNumber(str){
+	return myNumber.test(str);
+}
