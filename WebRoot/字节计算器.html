@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<header>
+<title>在线电脑字节转换器 - itzmx.com</title>
+<meta name="Keywords" content="" />
+<meta name="description" content="" />
+<h1 class="entry-title">PC字节计算器</h1>
+</header>
+<div class="entry-content">
+<p>使用我们的字节计算器可以轻松进行不同单位字节之间的转换。一个千字节等于多少个兆字节呢？</p>
+<script language="JavaScript1.2">
+<!--
+function doCalc(flagA)
+{
+   Rels = new Array(1,8,8192,8388608,8589934592,8796093022208);
+   for (i=0;i<Rels.length;i++)
+   {
+        if (i==flagA)
+        {
+            givenValue=document.getElementById(flagA).value.replace(",",".");
+            newVal=eval(givenValue*Rels[i])
+            document.getElementById("0").value=newVal;
+        }
+   }
+   for (i=1;i<Rels.length;i++)
+   {
+        newVal=eval(document.getElementById("0").value/Rels[i]);
+        neg=0;
+        if (newVal < 0)
+        {
+            newVal*=-1;
+            neg=1;
+        }
+        j=0;
+        while (newVal<1 && newVal>0)
+        {
+               j++;
+               newVal*=10;
+        }
+        newVal*=100000;
+        newVal=Math.round(newVal);
+        newVal/=100000;
+        newVal/=Math.pow(10,j);
+        newVal="a"+newVal;
+        cache=0;
+        if (newVal.indexOf("e") != -1)
+        {
+            cache=newVal.substr(newVal.indexOf("e"),5);
+            newVal=newVal.substring(0,newVal.indexOf("e"));
+        }
+        dig=new Array;
+        for (j=1;j<5;j++)
+            dig[j]=newVal.substr(newVal.length-j-1,1);
+        if (dig[1] == 9 && dig[2] == 9 && dig[3] == 9 && dig[4] == 9)
+           {
+                rest=newVal.substring(newVal.indexOf("."),100).length-1;
+                newVal=newVal.substring(1,newVal.length-1);
+                newVal="a"+eval(eval(newVal)+Math.pow(10,-rest+2));
+            }
+       for (j=1;j<5;j++)
+             dig[j]=newVal.substr(newVal.length-j-1,1);
+       if (dig[1] == 0 && dig[2] == 0 && dig[3] == 0 && dig[4] == 0)
+             {
+                 check=0;
+                 for (j=0;j<newVal.length-5;j++)
+                 {
+                      if (newVal.substr(j,1)!=0)
+                          check++;
+                 }
+                 if (check>2)
+                     newVal=newVal.substring(0,newVal.length-1);
+             }
+        if (cache)
+            newVal=newVal+cache;
+        newVal=newVal.substring(1,newVal.length);
+        if (neg)
+            newVal*=-1;
+        document.getElementById(i).value=eval(newVal);
+   }
+}
+// end Conversion: bits and bytes -->
+</script>
+<h2>电脑字节转换器</h2>
+<form name="flagA">
+  <table align="center" border="0" cellpadding="1" cellspacing="0"> 
+    <tbody><tr>
+      <td align="right"><font size="2">bit (b):</font></td>
+      <td>
+          <input id="0" size="20" onchange="doCalc(0)" value="" style="background-color: #FFFFFF">           例如: 8796093022208
+     </td>
+    </tr>
+    <tr>
+      <td align="right"><font size="2">byte (B):</font></td>
+      <td>
+          <input id="1" size="20" onchange="doCalc(1)" value="" style="background-color: #FFFFFF">           例如: 1099511627776
+     </td>
+    </tr>
+    <tr>
+      <td align="right"><font size="2">kilobyte (KB):</font></td>
+      <td>
+          <input id="2" size="20" onchange="doCalc(2)" value="" style="background-color: #FFFFFF">           例如: 1073741824
+     </td>
+    </tr>
+    <tr>
+      <td align="right"><font size="2">megabyte (MB):</font></td>
+      <td>
+          <input id="3" size="20" onchange="doCalc(3)" value="" style="background-color: #FFFFFF">           例如: 1048576
+     </td>
+    </tr>
+    <tr>
+      <td align="right"><font size="2">gigabyte (GB):</font></td>
+      <td>
+          <input id="4" size="20" onchange="doCalc(4)" value="" style="background-color: #FFFFFF">           例如:
+     1024</td>
+    </tr>
+    <tr>
+      <td align="right"><font size="2">terabyte (TB):</font></td>
+      <td>
+          <input id="5" size="20" onchange="doCalc(5)" value="" style="background-color: #FFFFFF"> 
+          例如: 1     </td>
+    </tr>
+	<tr>
+	  <td colspan="2" align="right" valign="center">
+<hr>在任何一单元格输入数值，然后点击<b>“计算”</b>按钮 <input value="计算" type="button"> <input value="清空" type="reset" ><br>
+	 </td>
+	</tr>
+  </tbody></table>
+</form>
+<h2><strong>字节计算器怎样进行字节至兆字节的转换？</strong></h2>
+<p>要使用我们的<strong>字节计算器</strong>，首先请确定要转换的量：比特<strong>Bit</strong>(b), 字节<strong>Byte</strong>(B), 千字节<strong>Kilobytes</strong>(KB), 兆字节<strong>Megabytes</strong>(MB), 吉字节<strong>Gigabyte</strong>(GB) and 太字节<strong>terabyte</strong>(TB)，以确保计算结果的准确性。进行各种计算机存储量的转换可不是一件简单的事，尤其是在计算一些比较大的数据值时，但是我们的<strong>字节计算器</strong>可以轻松帮你解决这一问题。</p>
+<h2><strong>一个太字节等于多少吉字节，又等于多少兆字节呢？</strong></h2>
+<p>被<strong>字节计算器</strong>转换的计算机数据是在<strong>法定字节转换表</strong>的基础上被计算的，因此，各种单位之间的转换并不是很难。</p>
+
+<div style="display:none">
+
+</div>
+</body>
+</html>

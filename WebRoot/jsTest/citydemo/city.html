@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>city</title>
+
+  </head>
+  <body>
+  <p>
+  <input type="radio" id="cityMode1" name="cityMode" value="1" checked="" onclick="pcModeProc(this.value)">省
+  <input type="radio" id="cityMode2" name="cityMode" value="2" onclick="pcModeProc(this.value)">省+市
+  </p>
+  省
+  <select id="province_code" name="province_code" onchange="initCity(this.value,'city_code')">
+  	
+  </select>
+  <span id="citySpan" style="display:none;">
+  市
+  <select id="city_code" name="city_code">
+  	
+  </select>
+  </span>
+  <script src="jquery.min.js"></script>
+  <script src="city.js"></script>
+  <script>
+  	initProvince('province_code');
+  </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>高度自适应布局</title>
+<style>
+html,body{ height:100%;}
+body,div{ margin:0; padding:0; color:#F00;}
+* html{ padding-top:100px;}/*for ie6*/
+.top{ background:#36C; height:100px;}
+* html .top{ background:#36C; height:100px; position:absolute; top:0; width:100%;}/*for ie6*/
+.main{ background:#F90; position:absolute; width:100%; top:100px; bottom:0; overflow:hidden;} /* overflow:auto; */
+* html .main{ background:#F90; position:static; height:90%;}/*for ie6*/
+</style>
+</head>
+<body>
+<div class="top">我是top，固定高度</div>
+<div class="main">我是main，高度随浏览器大小变化而变化<p style="height:500px;">aa</p></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+  </head>
+  <body>
+  	<input type="radio" name="radio1" value="1">a1
+  	<input type="radio" name="radio1" value="2">a2
+<script>
+	
+	function initEvt(){
+		var radioArray=document.getElementsByName('radio1');
+		for(i=0;i<radioArray.length;i++){
+			//console.log(radioArray[i])
+			radioArray[i].onclick=function(){
+				procRadio(this.value);
+			}
+			
+		}
+	}
+	
+	function procRadio(v){
+		console.log(v)
+	}
+	
+	initEvt();
+</script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>模板页面</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+	.btstyle1{
+		color:red;
+	}
+</style>
+</head>
+
+<body>
+
+<button type="button" id="myBt" class="btstyle1">ck</button>
+
+
+
+<script type="text/javascript">
+	function initEvent(){
+		document.querySelector('#myBt').onclick=function (){
+			console.log(1)
+		}
+		//获取文档中第一个button
+		myBtEl=document.querySelector('button');
+		console.log(myBtEl)
+		
+		getBtByClass=document.querySelector('.btstyle1');
+		console.log(getBtByClass)
+
+	}
+	initEvent();
+</script>
+
+</body>
+</html>

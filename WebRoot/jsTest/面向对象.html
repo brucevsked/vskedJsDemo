@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>面向对象</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+	function myOldPage(){
+		if(arguments.length==0){
+			console.log('there has 0 arguements')
+		}else if(arguments.length==1){
+			var arg1=arguments[0];
+			console.log('there has 0 arguements'+arg1)
+		}else if(arguments.length==2){
+			var arg1=arguments[0];
+			var arg2=arguments[1];
+			console.log('there has 0 arguements|'+arg1+'|'+arg2)
+		}else{
+			console.log(arguments)
+		}
+	}
+	myOldPage.prototype.currentPage=1;
+	myOldPage.prototype.pageSize=10;
+	
+	function test(){
+		var tmop=new myOldPage();
+		console.log(tmop.currentPage)
+	}
+	test();
+	
+</script>
+
+</body>
+</html>

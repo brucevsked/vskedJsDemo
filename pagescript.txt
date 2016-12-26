@@ -1,0 +1,9 @@
+﻿
+脚本用法 先按f12 选择控制台 在控制台内粘贴脚本 然后回车
+
+1 效果 将所有当前网页内复选框取消选中 
+var ckArray =  document.getElementsByTagName("input"); for(var i=0;i<ckArray.length;i++)  if(ckArray[i].type == "checkbox") ckArray[i].checked=false;
+
+2 效果 将所有当前网页内复选框选中
+var ckArray =  document.getElementsByTagName("input"); for(var i=0;i<ckArray.length;i++)  if(ckArray[i].type == "checkbox") ckArray[i].checked=true;
+

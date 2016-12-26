@@ -10,8 +10,22 @@ function ts(){
 	tmpArray.splice(0,1);
 	tmpArray.splice(0,1);
 	for(var i=0;i<tmpArray.length;i++){
-		console.log(tmpArray[i]);
+		//console.log(tmpArray[i]);
 	}
 }
+
+function ts1(){
+	var tmpArray=new Array();
+	for(var i=0;i<10;i++){
+	    tmpArray.push(i);
+	}
+	var currValue=tmpArray.pop();
+	console.log(currValue+'|'+tmpArray.length);
+	currValue=tmpArray.pop();
+	console.log(currValue+'|'+tmpArray.length);
+}
+
 ts();
+
+ts1();
 </script>
