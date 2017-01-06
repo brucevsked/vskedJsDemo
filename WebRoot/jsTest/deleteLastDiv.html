@@ -1,0 +1,19 @@
+<div>aaaa</div>
+<div>abbbb</div>
+<div>cccc</div>
+<div style="position:absolute;filter:alpha(opacity=0);opacity:0.01;z-index:-10;">aaabbb
+</div>
+
+<script>
+function rmAds(){
+	console.log(111)
+    divArry=document.getElementsByTagName('div')
+    var myEl=divArry[divArry.length-1];
+    console.log(myEl)
+    if(myEl.style.opacity==0.01){
+    	myEl.parentNode.removeChild(myEl);  
+    }    
+}
+
+setTimeout("rmAds()",2000);
+</script>
