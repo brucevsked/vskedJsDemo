@@ -1,0 +1,18 @@
+<html>
+<head>
+	
+</head>
+<body onload="">
+	<script>
+		function t1(){
+			var dataArray=new Array();
+			dataArray.push(JSON.stringify({a:'a1',b:'b1'}));
+			dataArray.push(JSON.stringify({a:'a2',b:'b2'}));
+			dataArray.push(JSON.stringify({a:'a3',b:'b3'}));
+			var dataStr=dataArray.join('|');
+			console.log(dataStr)
+		}
+		t1();
+	</script>
+</body>
+</html>

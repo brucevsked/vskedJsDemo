@@ -33,6 +33,7 @@
           { name: "澳门", cities: ["花地玛堂区", "圣安多尼堂区", "大堂区", "望德堂区", "风顺堂区", "嘉模堂区", "圣方济各堂区", "路氹城"]}] ;
           
 function initProvince(provinceSelectId){
+  $('#'+provinceSelectId).empty();
 	$('#'+provinceSelectId).append('<option value="">请选择</option>');
 	$.each(provinceCityData,function (index,el){
 		$('#'+provinceSelectId).append('<option value="'+el.name+'">'+el.name+'</option>');
