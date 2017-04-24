@@ -1,0 +1,26 @@
+html,body{
+width:100%;
+height:100%;
+}
+
+body {
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+}
+
+#screenDiv {
+width:100%;
+height:100%;
+background-color:#cccccc;
+}
+
+#loginDiv {
+position:relative;
+top:35%;
+left:25%;
+width:50%;
+height:25%;
+background-color:#fff;
+}
