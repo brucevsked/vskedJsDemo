@@ -60,11 +60,22 @@ function ts2(){
 	console.log('|'+d.formatDate(pattern)+'|');
 }
 
+function ts3(){
+	var pattern='yyyy-MM-dd hh:mm:ss';
+	var str1='2017/01/02 12:34:25';
+	var d=new Date(str1);
+	console.log('1|'+d.formatDate(pattern)+'|');
+	var str2='08/7/2018 12:23:35';
+  d=new Date(str2);
+	console.log('2|'+d.formatDate(pattern)+'|');
+}
+
 /*
 ts();
 ts1();
-*/
-
 ts2();
+*/
+ts3();
+
 
 </script>
