@@ -22,7 +22,7 @@ function testGetParameterArray(){
 	var s2='a.html?v.Id={id}&pp={ok.id}&vv={jj.d}';
 	outPutArray(getParameterArray(s2));
 }
-
+//-----------------------------------------------------------
 function is4And3Eq(dt,start,end){
 	return dt.substring(start-1,start)==dt.substring(end-1,end);
 }
@@ -44,9 +44,27 @@ function testSameEnd(){
 	}
 	console.log(result)
 }
-	
+//-----------------------------------------------------------
+function testStartWith(){
+	var regx=/^b/;
+	var dtList=['ab','bc','ba','ad','bb','bd'];
+	for(i=0;i<dtList.length;i++){
+		var dt=dtList[i];
+		console.log('start with b|'+regx.test(dt))
+	}
+}
+//-----------------------------------------------------------
+function testEndWith(){
+	var regx=/t$/;
+	var dtList=['abt','bcv','bat','add','bbs','bdt'];
+	for(i=0;i<dtList.length;i++){
+		var dt=dtList[i];
+		console.log('end with b|'+regx.test(dt)+'|'+dt)
+	}
+}
+//-----------------------------------------------------------
 function ts(){
-	testSameEnd();
+	testEndWith();
 }
 	
 ts();
