@@ -29,6 +29,7 @@ function is4And3Eq(dt,start,end){
 
 function testSameEnd(){
 	var result=[];
+	//重复2次以上包括第一次,如果只重复两次就是{2}
 	var regx=/(\d)\1{2,}/;
 	
 	//取规则AAA
