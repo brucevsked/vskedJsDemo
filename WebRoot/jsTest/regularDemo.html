@@ -22,9 +22,30 @@ function testGetParameterArray(){
 	var s2='a.html?v.Id={id}&pp={ok.id}&vv={jj.d}';
 	outPutArray(getParameterArray(s2));
 }
+
+function is4And3Eq(dt,start,end){
+	return dt.substring(start-1,start)==dt.substring(end-1,end);
+}
+
+function testSameEnd(){
+	var result=[];
+	var regx=/(\d)\1{2,}/;
+	
+	//取规则AAA
+	var dataList=['1234567890a','17046301331','17046301666','17046301777','17046301888','17046301999','17888888888','17999999999'];
+	for(i=0;i<dataList.length;i++){
+		var dt=dataList[i];
+		if( !is4And3Eq(dt,8,9) && regx.test(dt.substring(dt.length-3)) ){
+			result.push(dt);
+		}
+		//console.log(dt.substring(dt.length-3))
+		//console.log(regx.test(dt.substring(dt.length-3)))
+	}
+	console.log(result)
+}
 	
 function ts(){
-	testGetParameterArray();
+	testSameEnd();
 }
 	
 ts();
