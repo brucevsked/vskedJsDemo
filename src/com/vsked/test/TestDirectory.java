@@ -30,7 +30,6 @@ public class TestDirectory {
 		}else{
 			fcount++;
 			System.out.println(fcount+"|"+f.getName()+"||"+f.getParentFile());
-			//TODO will check
 			//c.setTimeInMillis(f.lastModified());
 			//allFile.add(new FileInfo(folderCounter,f.getName(), f.getCanonicalPath(), getFileSize(f.length()), c.getTime().toLocaleString()));
 		}

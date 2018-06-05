@@ -108,6 +108,4 @@ public class VskTree {
 		return false;		
 	}
 	
-	//TODO delete the loop replace express
-	
 }

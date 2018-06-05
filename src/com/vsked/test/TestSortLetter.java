@@ -10,7 +10,6 @@ public class TestSortLetter {
 		
 
 	}
-	//TODO will goon write
 	  public String sortGiftCode(String code){
 		 char[] arr=code.toCharArray();
 			for(int i=0;i<arr.length-1;i++){
