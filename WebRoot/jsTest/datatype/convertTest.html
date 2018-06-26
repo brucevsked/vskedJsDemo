@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>类型转换</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+var convertVsked=new Object({
+	byteToHex:function(b){
+		if(b < 0x10){
+		  return "0" + b.toString(16);
+		}else{
+			return b.toString(16);
+		}
+	},
+	binToHex:function(str){
+	var result = "";
+	for (i = 0; i < str.length; i++ ) {
+		var c = str.charCodeAt(i);
+		result += byte2Hex(c>>8 & 0xff); // 高字节
+		result += byte2Hex(c & 0xff);	// 低字节
+	}
+	return result;
+	},
+	stringToArrayBuffer: function (str) {
+		var buf = new ArrayBuffer(str.length*2); // 每个字符占用2个字节
+    var bufView = new Uint16Array(buf);
+    for (var i=0, strLen=str.length; i<strLen; i++) {
+        bufView[i] = str.charCodeAt(i);
+    }
+    return buf;
+  },
+	arrayBufferToString:function(buf){
+		return String.fromCharCode.apply(null, new Uint16Array(buf));
+	},
+	byteToString:function(arr){
+		if(typeof arr === 'string') {  
+        return arr;  
+    }  
+    var str = '',  
+    _arr = arr;  
+    for(var i = 0; i < _arr.length; i++) {  
+        var one = _arr[i].toString(2),  
+            v = one.match(/^1+?(?=0)/);  
+        if(v && one.length == 8) {  
+            var bytesLength = v[0].length;  
+            var store = _arr[i].toString(2).slice(7 - bytesLength);  
+            for(var st = 1; st < bytesLength; st++) {  
+                store += _arr[st + i].toString(2).slice(2);  
+            }  
+            str += String.fromCharCode(parseInt(store, 2));  
+            i += bytesLength - 1;  
+        } else {  
+            str += String.fromCharCode(_arr[i]);  
+        }  
+    }  
+    return str;  
+	},
+	stringToByte:function(str){
+		var bytes = new Array();  
+    var len, c;  
+    len = str.length;  
+    for(var i = 0; i < len; i++) {  
+        c = str.charCodeAt(i);  
+        if(c >= 0x010000 && c <= 0x10FFFF) {  
+            bytes.push(((c >> 18) & 0x07) | 0xF0);  
+            bytes.push(((c >> 12) & 0x3F) | 0x80);  
+            bytes.push(((c >> 6) & 0x3F) | 0x80);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else if(c >= 0x000800 && c <= 0x00FFFF) {  
+            bytes.push(((c >> 12) & 0x0F) | 0xE0);  
+            bytes.push(((c >> 6) & 0x3F) | 0x80);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else if(c >= 0x000080 && c <= 0x0007FF) {  
+            bytes.push(((c >> 6) & 0x1F) | 0xC0);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else {  
+            bytes.push(c & 0xFF);  
+        }  
+    }  
+    return bytes;
+	}
+});
+</script>
+
+<script type="text/javascript">
+	var s='@';
+  var arrayBuffer1=convertVsked.stringToArrayBuffer(s);
+  console.log('|'+arrayBuffer1+'|');
+  var rs=convertVsked.arrayBufferToString(arrayBuffer1);
+    console.log('|'+rs+'|');
+    
+  var tmpArr1=[69];
+  console.log(tmpArr1);
+  var rs1=convertVsked.byteToString(tmpArr1);
+  console.log(rs1);
+  var tmpArr2=convertVsked.stringToByte(rs1);
+  console.log(tmpArr2);
+  
+  var myByte=60;
+  var myHex=convertVsked.byteToHex(myByte);
+  console.log('|'+myHex+'|');
+  
+</script>
+
+</body>
+</html>
