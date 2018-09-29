@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>table测试</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+
+<body>
+<button id="test1Bt" onclick="ts()">test</button>
+<button id="test2Bt" onclick="ts1()">test1</button>
+<div id="backMsg"></div>
+
+<script>
+function ts(){
+  var dt=[1,2,3,4,5,6,7,8,9,10];
+  console.log(1);
+  var mytb1=document.createElement('table');
+  var colCount=0;
+  for(var i=0;i<dt.length;i++){
+    var mytb1_tr=document.createElement('tr');
+    var mytb1_tr_td=document.createElement('td');
+    mytb1_tr_td.innerText=dt[i];
+    mytb1_tr.appendChild(mytb1_tr_td);
+    mytb1.appendChild(mytb1_tr);
+  }
+  
+  var backMsg=document.getElementById('backMsg');
+  backMsg.innerHTML='';
+  backMsg.appendChild(mytb1);
+  
+}
+
+function ts1(){
+  var maxRow=5;
+  var dt=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+  console.log(1);
+  var mytb1=document.createElement('table');
+  mytb1.id='mytb1';
+  var backMsg=document.getElementById('backMsg');
+  backMsg.innerHTML='';
+  backMsg.appendChild(mytb1);
+  
+  var colIndex=0;
+  for(var rowIndex=0;rowIndex<dt.length;rowIndex++){
+    if(rowIndex<maxRow){
+       var mytb1_tr=mytb1.insertRow(rowIndex);
+       mytb1_tr.id='myTr'+rowIndex;
+       var mytb1_tr_td=mytb1_tr.insertCell(colIndex);
+       mytb1_tr_td.innerText=dt[rowIndex];
+
+       //console.log('row:'+rowIndex+'|cell:'+colIndex+'|'+dt[rowIndex]);
+    }else{
+      
+      colIndex=(Math.ceil(rowIndex/maxRow)+parseInt(rowIndex%maxRow==0?1:0))-1;
+      console.log('-------------------------');
+      console.log('row:'+(rowIndex%maxRow)+'|cell:'+colIndex+'|'+dt[rowIndex]);
+      var mytb1_tr1=document.getElementById('mytb1').rows[(rowIndex%maxRow)];
+      var mytb1_tr1_td1=mytb1_tr1.insertCell(colIndex);
+      mytb1_tr1_td1.innerText=dt[rowIndex];
+
+    }    
+
+  }
+  
+}
+
+</script>
+</body>
+</html>
