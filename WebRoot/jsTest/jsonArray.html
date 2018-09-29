@@ -1,14 +1,38 @@
-﻿
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>json测试</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+
+<body>
+
 
 <script>
 
 function ts(){
-	personObject={"name":"vsked","age":18,"sex":"boy"};
-	alert(personObject.name+'|'+personObject.age+'|'+personObject.sex);
-	personArray={"data":[{"name":"vsked","age":18,"sex":"boy"},{"name":"admin","age":10,"sex":"girl"},{"name":"tiantian","age":25,"sex":"wolf"}]};
-	alert(personArray.data.length)
-	for(i=0;i<personArray.data.length;i++)
-		alert(personArray.data[i].name+'|'+personArray.data[i].age+'|'+personArray.data[i].sex);
+	var personObject={"name":"vsked","age":18,"sex":"boy"};
+	console.log(personObject.name+'|'+personObject.age+'|'+personObject.sex);
+	var personArray={"data":[{"name":"vsked","age":18,"sex":"boy"},{"name":"admin","age":10,"sex":"girl"},{"name":"tiantian","age":25,"sex":"wolf"}]};
+	console.log(personArray.data.length)
+	for(i=0;i<personArray.data.length;i++){
+      console.log(personArray.data[i].name+'|'+personArray.data[i].age+'|'+personArray.data[i].sex);
+	}
+	var k1='na'+'me';
+	for(var oldK1 in personObject){
+	  if(k1==oldK1){
+	    console.log('A1|'+personObject[oldK1]);
+	  }
+	}
+	console.log('A2|'+personObject[k1]);
+		
 }
 ts();
 </script>
+</body>
+</html>
