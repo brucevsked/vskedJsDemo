@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>选号示例</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table{
+	 border-collapse: collapse;
+	 margin: 0 auto; 
+}  
+table td, table th{
+	border: 1px solid #cad9ea;
+  color: #666;  
+  height: 30px;  
+  }  
+table thead th  {  
+  background-color: #CCE8EB;  
+  width: 100px;  
+}  
+table tr:nth-child(odd)  {
+	background: #fff;	
+}  
+table tr:nth-child(even)  
+{  
+  background: #F5FAFA;
+}
+
+input[type="text"]{
+    width: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 0px 2px transparent;
+    color: #eca29b;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+}
+</style>
+</head>
+
+<body>
+	<div>
+		说明:
+		您可以手工输入号码也可以点击随机生成
+	</div>
+	
+<table border="1" cellspacing="0">
+	<tr><th>11选5</th></tr>
+	<tr><td id="num35container">&nbsp;</td></tr>
+	<tr><td ><button id="myRandBt" type="button">随机</button> &nbsp; &nbsp; <button id="confirmBt" type="button">兑换</button></td></tr>
+</table>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">
+'use strict'
+
+$(function(){
+	mydm1.initUI1();
+	$('#myRandBt').on('click',mydm1.randomBtCk);
+	$('#confirmBt').on('click',mydm1.confirmBtCk);
+	$('#num35_0').focus();
+});
+
+var mydm1=new Object({
+	curList:[],
+	initUI1: function(){
+		var result='';
+		for(var i=0;i<5;i++){
+			result+='<input type="text" maxlength="2" id="num35_'+i+'" >&nbsp;';
+		}
+		$('#num35container').html(result);
+		result='';
+		for(var i=0;i<2;i++){
+			result+='<input type="text" maxlength="2" id="num12_'+i+'" >&nbsp;';
+		}
+		$('#num12container').html(result);
+	},
+	numKeyPress:function(){
+	},
+	randomBtCk:function(){
+		mydm1.curList=new Array();
+		for(var i=0;i<5;i++){			
+			$('#num35_'+i).val(mydm1.getRandNum(11));
+		}
+	},
+	getRandNum:function(num1){
+		var curNum=Math.floor(Math.random()*num1 + 1);
+		var flag=true;
+		while(flag){
+			if($.inArray(curNum,mydm1.curList)==-1){
+				mydm1.curList.push(curNum);
+				flag=false;
+			}else{
+			 curNum=Math.floor(Math.random()*num1 + 1);
+			}
+		}
+		//生成1到num1的随机数
+		return curNum;
+	},
+	confirmBtCk:function(){
+		var result='';
+		for(var i=0;i<5;i++){
+			if($('#num35_'+i).val()==''){
+				alert('请确认前区第'+(i+1)+'个号码是否输入');
+				$('#num35_'+i).focus();
+				return false;
+			}else{
+			  result+='['+$('#num35_'+i).val()+']';
+			}
+		}
+		if(confirm('确定要兑换号码['+result+']么?')){
+			alert('兑换号码['+result+']成功!');
+		}
+	}
+});
+</script>
+</body>
+</html>
