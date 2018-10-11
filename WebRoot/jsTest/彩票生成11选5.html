@@ -48,7 +48,7 @@ input[type="text"]{
 	</div>
 	
 <table border="1" cellspacing="0">
-	<tr><th>11选5</th></tr>
+	<tr><th>11选5,最后为和</th></tr>
 	<tr><td id="num35container">&nbsp;</td></tr>
 	<tr><td ><button id="myRandBt" type="button">随机</button> &nbsp; &nbsp; <button id="confirmBt" type="button">兑换</button></td></tr>
 </table>
@@ -73,20 +73,21 @@ var mydm1=new Object({
 		for(var i=0;i<5;i++){
 			result+='<input type="text" maxlength="2" id="num35_'+i+'" >&nbsp;';
 		}
+		result+='<br>和:<input type="text" maxlength="2" id="num35_s" >&nbsp;';
 		$('#num35container').html(result);
-		result='';
-		for(var i=0;i<2;i++){
-			result+='<input type="text" maxlength="2" id="num12_'+i+'" >&nbsp;';
-		}
-		$('#num12container').html(result);
 	},
 	numKeyPress:function(){
 	},
 	randomBtCk:function(){
 		mydm1.curList=new Array();
-		for(var i=0;i<5;i++){			
-			$('#num35_'+i).val(mydm1.getRandNum(11));
+		var ct=0;
+		var mya=0;
+		for(var i=0;i<5;i++){
+		  mya=mydm1.getRandNum(11);
+			$('#num35_'+i).val(mya);
+			ct+=mya;
 		}
+		$('#num35_s').val(ct);
 	},
 	getRandNum:function(num1){
 		var curNum=Math.floor(Math.random()*num1 + 1);
