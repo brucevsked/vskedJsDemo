@@ -1152,6 +1152,10 @@ for(var i=0;i<dataList.length;i++){
     var p1={x:(data[ak]-1)*pointSeg,y:y1};
     draw_point(p1);
   }
+  if(i%50==0){
+    console.log('----------'+i)
+  draw_line({x1:0,y1:i,x2:210,y2:i,color:'#000'});
+  }
   y1=y1+pointSeg;
 }
 console.log(outPutData.join(','));

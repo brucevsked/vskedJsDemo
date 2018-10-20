@@ -48,7 +48,7 @@ input[type="text"]{
 	</div>
 	
 <table border="1" cellspacing="0">
-	<tr><th>11选5,最后为和</th></tr>
+	<tr><th>11选5</th></tr>
 	<tr><td id="num35container">&nbsp;</td></tr>
 	<tr><td ><button id="myRandBt" type="button">随机</button> &nbsp; &nbsp; <button id="confirmBt" type="button">兑换</button></td></tr>
 </table>
@@ -58,6 +58,30 @@ input[type="text"]{
 
 <script type="text/javascript">
 'use strict'
+
+  function isSub5(ar){
+  for(var row=0;row<ar.length;row++){
+    for(var col=0;col<ar.length;col++){
+      if((ar[col]-ar[row])==5) {
+        //console.log(ar[col]+'|'+ar[row]+'|差5')
+        return true;
+      }
+    }    
+  }
+  return false;
+}
+
+function isSum12(ar){
+  for(var row=0;row<ar.length;row++){
+    for(var col=0;col<ar.length;col++){
+      if((ar[col]+ar[row])==12){
+        //console.log(ar[col]+'|'+ar[row]+'|和12')
+        return true;
+      }
+    }    
+  }
+  return false;
+}
 
 $(function(){
 	mydm1.initUI1();
@@ -74,20 +98,26 @@ var mydm1=new Object({
 			result+='<input type="text" maxlength="2" id="num35_'+i+'" >&nbsp;';
 		}
 		result+='<br>和:<input type="text" maxlength="2" id="num35_s" >&nbsp;';
+		result+='<br>和12:<input type="text" maxlength="2" id="num35_s12" >&nbsp;';
+		result+='<br>差5:<input type="text" maxlength="2" id="num35_su5" >&nbsp;';
 		$('#num35container').html(result);
 	},
 	numKeyPress:function(){
 	},
 	randomBtCk:function(){
 		mydm1.curList=new Array();
+		var tmpArry=new Array();
 		var ct=0;
 		var mya=0;
 		for(var i=0;i<5;i++){
 		  mya=mydm1.getRandNum(11);
+		  tmpArry.push(mya);
 			$('#num35_'+i).val(mya);
 			ct+=mya;
 		}
 		$('#num35_s').val(ct);
+		$('#num35_s12').val(isSum12(tmpArry)?1:0);
+		$('#num35_su5').val(isSub5(tmpArry)?1:0);
 	},
 	getRandNum:function(num1){
 		var curNum=Math.floor(Math.random()*num1 + 1);
