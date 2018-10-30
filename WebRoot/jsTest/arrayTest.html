@@ -4,7 +4,7 @@
 <!-- must set here! -->
 <base href="">
 
-<title>模板页面</title>
+<title>数组测试</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
@@ -17,18 +17,33 @@
 <script type="text/javascript">
 $(function(){
 
-	myTestA1.test1();
+	arrayTest.test1();
 
 });
 
-var myTestA1=new Object({
+var arrayTest=new Object({
 	test1:function(){
-		console.log('aa'+1);
+		console.log('test'+1);
+		var myArray=new Array();// 声明数组
+		myArray.push({'win1':'1.11'});//向数组内添加元素
+		myArray.push({'tie1':'2.22'});
+		myArray.push({'lose1':'3.33'});
+		console.log('数组元素个数为:'+myArray.length)
+		var tmpEl={'win1':'1.11'};
+		console.log($.inArray(tmpEl,myArray));
 	},
 	test2:function(){
 		console.log(2);
+	},
+	test3:function(){
+		console.log(3);
+	},
+	test4:function(){
+		console.log(4);
 	}
 });
+
+
 </script>
 
 </body>
