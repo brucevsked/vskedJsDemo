@@ -18,6 +18,7 @@
 $(function(){
 
 	arrayTest.test1();
+	arrayTest.test2();
 
 });
 
@@ -28,12 +29,20 @@ var arrayTest=new Object({
 		myArray.push({'win1':'1.11'});//向数组内添加元素
 		myArray.push({'tie1':'2.22'});
 		myArray.push({'lose1':'3.33'});
-		console.log('数组元素个数为:'+myArray.length)
-		var tmpEl={'win1':'1.11'};
-		console.log($.inArray(tmpEl,myArray));
+		console.log('数组元素个数为:'+myArray.length);//
 	},
 	test2:function(){
-		console.log(2);
+	  //数组转字符串
+		console.log('test'+2);
+		var myArray=new Array();// 声明数组
+		myArray.push({'win1':'1.11'});//向数组内添加元素
+		myArray.push({'tie1':'2.22'});
+		myArray.push({'lose1':'3.33'});
+		myArray.push({'lose2':'6.66'});
+		myArray.push({'lose3':'7.81'});
+		console.log('数组元素个数为:'+myArray.length);
+		var myStr=JSON.stringify(myArray);
+		console.log(myStr);
 	},
 	test3:function(){
 		console.log(3);
