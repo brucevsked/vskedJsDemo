@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>模板页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+
+</head>
+
+<body>
+  
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+
+	console.log('a1|'+myTestA1.getDateTimeFrom1970());
+	console.log('a2|'+myTestA1.test2());
+
+});
+
+var myTestA1=new Object({
+	getDateTimeFrom1970:function(){
+		return ((+new Date())+'').substring(0,10);
+	},
+	test2:function(){
+		var s=("" + Date.parse(new Date())).substr(0,10);
+		return s;
+	}
+});
+</script>
+
+</body>
+</html>
