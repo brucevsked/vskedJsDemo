@@ -19,7 +19,8 @@ $(function(){
 
 	arrayTest.test1();
 	arrayTest.test2();
-
+  arrayTest.test3();
+  arrayTest.test4();
 });
 
 var arrayTest=new Object({
@@ -45,10 +46,22 @@ var arrayTest=new Object({
 		console.log(myStr);
 	},
 	test3:function(){
-		console.log(3);
+	  //删除元素
+	  var ar1=['01','02','03','04','06','07'];
+	  ar1.splice(ar1.indexOf('01'), 1);
+		console.log(ar1);
+		ar1.splice(ar1.indexOf('06'), 1);
+		console.log(ar1);
+		//不遍历删除数组内元素
+		var tmpa1=ar1.indexOf('18')>=0?ar1.splice(ar1.indexOf('18'), 1):ar1;
+		console.log(tmpa1);
 	},
 	test4:function(){
-		console.log(4);
+	   var ar1=['01','02','03','04','06','07'];
+	   console.log('|'+ar1.length);
+	   delete ar1[1];//删除元素数组长度不变
+		 console.log('|'+ar1.length);
+		 console.log('|'+ar1);
 	}
 });
 
