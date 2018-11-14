@@ -70,12 +70,23 @@ function ts3(){
 	console.log('2|'+d.formatDate(pattern)+'|');
 }
 
-/*
+function ts4(){
+  //修正mysql转日期时bug
+	var pattern='yyyy-MM-dd hh:mm:ss';
+	var dt1=1542206561000-50400000;
+	var d=new Date(dt1);
+	console.log(d.getFullYear()+'|'+(d.getMonth()+1)+'|'+d.getDate()+'|'+d.getHours()+'|')
+	console.log('|'+d.formatDate(pattern)+'|');
+	console.log('当前毫秒数|'+new Date().getTime());
+}
+
+
 ts();
 ts1();
 ts2();
-*/
 ts3();
+
+ts4();
 
 
 </script>
