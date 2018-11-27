@@ -22,7 +22,7 @@ $(function(){
 });
 
 var myTestA1=new Object({
-  endDateTime:'2018-11-27 22:55:41',
+  endDateTime:'2018-11-27 21:37:40',
 	test1:function(){
 	  var endMap=myTestA1.getDateA1(myTestA1.endDateTime);
 		var endHour=endMap.h;
@@ -45,8 +45,16 @@ var myTestA1=new Object({
 		  endHour=endHour-1;
 		}
 		$('#_m1a').html(subMin);
+		//console.log((subMin==0 && subSec==0)+'|'+subSec+'|'+subMin);
+		if((subMin<=0 && subSec<=0) || subMin>9){
+		  $('#_m1a').html('0');
+		  $('#_s1a').html('0');
+		  clearTimeout(window.runState);
+		  console.log('clean over ---------');
+		  return false;
+		}
 		
-		setTimeout(myTestA1.test1,500);
+		window.runState=setTimeout(myTestA1.test1,500);
 		
 	},
 	getDateA1:function(str){
