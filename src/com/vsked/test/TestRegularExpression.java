@@ -17,12 +17,14 @@ public class TestRegularExpression {
 	public static String tagStart="<\\w++\\s++";
 	public static String attr="\\s\\w++=[\"|']\\w++[\"|']";
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		String regularExpressionStr=tagName;
 		String fc=FileProcess.readFile(new File("c:/t.xml"));
 		for(String s:getElementsByTagName(fc,"Data"))
 			System.out.println(s);
 	}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static Set<String> getTagList(String c){
 		Set tagSet=new HashSet<String>();
 		Matcher m = Pattern.compile(tagName).matcher(c);
@@ -32,7 +34,7 @@ public class TestRegularExpression {
 	}
 	
 	public static List<String> getAttributeList(String tag){
-		List attrList=new ArrayList<String>();
+		ArrayList<String> attrList=new ArrayList<String>();
 		Matcher m = Pattern.compile(tagName).matcher(tag);
 		while(m.find())
 			attrList.add(m.group().substring(1));

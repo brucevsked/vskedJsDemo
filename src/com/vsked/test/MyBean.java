@@ -28,6 +28,7 @@ public class MyBean {
 		this.bf = bf;
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
 		MyBean m1=new MyBean();

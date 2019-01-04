@@ -7,8 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.vsked.util.VskTree;
-
 public class TestDirectory {
 	static int fcount=0;
 	static Calendar c=Calendar.getInstance();

@@ -12,6 +12,7 @@ public class TestThread1 implements Runnable{
 
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		while(true){

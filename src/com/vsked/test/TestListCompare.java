@@ -8,8 +8,8 @@ import java.util.Map;
 public class TestListCompare {
 
 	public static void main(String[] args) {
-		List<Map> t1=new ArrayList<Map>();
-		List<Map> t2=new ArrayList<Map>();
+		List<Map<String, String>> t1=new ArrayList<Map<String, String>>();
+		List<Map<String, String>> t2=new ArrayList<Map<String, String>>();
 		
 		
 		for(int i=0;i<10;i++){
@@ -37,10 +37,10 @@ public class TestListCompare {
 			t2.add(m1);
 		}
 		
-		List<Map> tmpL=new ArrayList<Map>();
+		List<Map<String, String>> tmpL=new ArrayList<Map<String, String>>();
 		
-		for(Map m:t1){
-			for(Map mt:t2){
+		for(Map<String, String> m:t1){
+			for(Map<String, String> mt:t2){
 				if(mt.get("playerCardNum").equals(m.get("playerCardNum"))){
 					tmpL.add(getCRMap(m, mt));
 				}
@@ -48,11 +48,11 @@ public class TestListCompare {
 		}
 	}
 	
-	public static Map getCRMap(Map m1,Map m2){
+	public static Map<String, String> getCRMap(Map<String, String> m1,Map<String, String> m2){
 		Object[] ak=m1.keySet().toArray();
 		for(int i=0;i<ak.length;i++){
 			if(m1.get(ak[i]).equals(m2.get(ak[i]))){
-				m1.put(ak[i], m2.get(ak[i]));
+				m1.put(ak[i]+"", m2.get(ak[i]));
 			}
 		}
 		return m1;

@@ -8,6 +8,7 @@ import java.io.RandomAccessFile;
 
 public class TestRead {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		String fname="c:/r.txt";
 		int flength=5;

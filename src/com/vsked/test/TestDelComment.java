@@ -47,6 +47,7 @@ public class TestDelComment {
 		return tmp;
 	}
 	
+	@SuppressWarnings({ "unused", "resource" })
 	public static void writeFile(String saveFilePath,String fileContent,String charSet) throws Exception {
 		ByteBuffer buffer = ByteBuffer.allocateDirect(1024); 
 		FileChannel fc=new FileOutputStream(saveFilePath).getChannel();
@@ -83,6 +84,7 @@ public class TestDelComment {
 		}
 	}
 	
+	@SuppressWarnings({ "resource", "unused" })
 	public static String getCharset(File file) throws Exception {   
         String charset = "GBK";   
         byte[] first3Bytes = new byte[3];   

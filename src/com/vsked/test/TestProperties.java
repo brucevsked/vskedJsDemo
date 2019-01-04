@@ -1,7 +1,5 @@
 package com.vsked.test;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Enumeration;
 import java.util.Properties;
 

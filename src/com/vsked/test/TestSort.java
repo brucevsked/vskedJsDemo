@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class TestSort {
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		
 		List<String> t1=new ArrayList<String>();

@@ -79,7 +79,8 @@ public class ConnectMysql {
 		ConnectMysql.url = url;
 	}
 
-    public static void main(String[] args) throws Exception {
+    @SuppressWarnings("unused")
+	public static void main(String[] args) throws Exception {
     	Connection inC=ConnectMysql.getConnection();
     	String sql="show databases";
     	//new DbUtil.getTableContent(inC,sql);

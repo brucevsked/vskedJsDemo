@@ -9,6 +9,7 @@ public class TestDeleteElement {
 		testDelListElement();
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void testDelListElement(){
 		List al=new LinkedList();
 		al.add("1");

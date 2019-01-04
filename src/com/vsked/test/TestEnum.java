@@ -4,7 +4,8 @@ import com.vsked.util.HtmlTag;
 
 public class TestEnum {
    
-    public static void main(String[] args) {
+    @SuppressWarnings("unused")
+	public static void main(String[] args) {
     	String r1="";
     	for(HtmlTag ht:HtmlTag.values()){
     		System.out.println(ht);

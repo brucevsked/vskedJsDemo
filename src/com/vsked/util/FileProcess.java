@@ -6,17 +6,11 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
@@ -30,6 +24,7 @@ public class FileProcess {
 		String s="fft";
 		writeFile("c:/f.txt", s);
 	}
+	@SuppressWarnings({ "unused", "resource" })
 	public static void writeFile(String saveFilePath,String fileContent) throws Exception {
 		ByteBuffer buffer = ByteBuffer.allocateDirect(1024); 
 		FileOutputStream outf = new FileOutputStream(saveFilePath);
@@ -43,6 +38,7 @@ public class FileProcess {
 		}
 		
 	}
+	@SuppressWarnings("resource")
 	public static String readFile(File inF) throws Exception{
 		String str="";
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inF.getCanonicalPath())));  
@@ -89,6 +85,7 @@ public class FileProcess {
 			return "";
 	}
 	
+	@SuppressWarnings({ "resource", "unused" })
 	public static String get_charset(File file) throws Exception {   
         String charset = "GBK";   
         byte[] first3Bytes = new byte[3];   
