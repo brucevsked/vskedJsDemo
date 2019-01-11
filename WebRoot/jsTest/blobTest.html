@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>html原型模板</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+</head>
+
+<body>
+  
+<a href="" download="文件.csv" id="btn">下载</a>
+
+<script>
+   var blob = new Blob(["Hello,world!\n123123,123123"], {type: "text/csv,charset=UTF-8"});
+   console.log(blob)
+   document.getElementById("btn").href = window.URL.createObjectURL(blob);
+</script>
+
+</body>
+</html>
