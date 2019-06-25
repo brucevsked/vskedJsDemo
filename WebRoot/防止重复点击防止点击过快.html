@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<!-- must set here! -->
+<base href="">
+
+<title>防止重复点击或点击过快</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+</head>
+
+<body>
+<button id="updateBt">clickme</button>
+<div id="rsDiv">1</div>
+<script src="js/lib/jquery.min.js"></script>
+<script>
+'use strict'
+
+$(function(){
+	$('#updateBt').on('click',appHumanVideoInfoBind.update);
+});
+
+
+
+var appHumanVideoInfoBind=new Object({
+  testCount:1,
+	updateIsClick:true,
+	update:function(){
+		if(appHumanVideoInfoBind.updateIsClick==false) return false;
+		//开始业务
+		appHumanVideoInfoBind.testCount=appHumanVideoInfoBind.testCount+1;
+    $('#rsDiv').html(appHumanVideoInfoBind.testCount);
+    console.log('我们的业务已经运行了');
+		//业务结束
+		appHumanVideoInfoBind.updateIsClick=false;
+		setTimeout(function() {	appHumanVideoInfoBind.updateIsClick = true;	}, 3000);//3秒内不可以重复点击
+	    
+	    
+	},
+	initUI:function(){
+
+	}
+});
+</script>
+
+</body>
+</html>

@@ -17,10 +17,11 @@
 <script type="text/javascript">
 $(function(){
 
-	arrayTest.test1();
-	arrayTest.test2();
-  arrayTest.test3();
-  arrayTest.test4();
+	//arrayTest.test1();
+	//arrayTest.test2();
+  //arrayTest.test3();
+  //arrayTest.test4();
+  arrayTest.arrayToString();
 });
 
 var arrayTest=new Object({
@@ -62,6 +63,19 @@ var arrayTest=new Object({
 	   delete ar1[1];//删除元素数组长度不变
 		 console.log('|'+ar1.length);
 		 console.log('|'+ar1);
+	},
+	arrayToString:function(){
+	  var a1=new Array();
+	  a1.push(9);
+	  var rs1=a1.join(',');
+	  console.log(rs1);
+	  var a2=new Array();
+	  a2.push(10);
+	  a2.push(11);
+	  a2.push(12);
+	  var rs2=a2.join(',');
+	  console.log(rs2);
+
 	}
 });
 
